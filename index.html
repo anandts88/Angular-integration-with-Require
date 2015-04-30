@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" ng-app="Jefferson">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Angular + Require + UIRouter</title>
+</head>
+<body>
+  <header>Header</header>
+
+  <main ng-hide="isRouteLoading" ui-view></main>
+
+  <div ng-show="isRouteLoading" class="loading-overlay">
+    Loading ... 
+  </div>  
+
+  <footer>Footer</footer>
+
+  <script src="js/lib/require.js" data-main="js/main.js"></script>
+</body>
+</html>

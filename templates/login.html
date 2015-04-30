@@ -1,0 +1,24 @@
+<form name="loginForm" ng-submit="login(loginForm)" novalidate class="loginForm">
+  {{name}}
+  <ul class="form-ul">
+    <li>
+      <label for="userName" class="content-label">Username</label>
+      <span class="content"><input type="text" id="userName" name="userName" ng-model="userName" required ng-minlength=8 ng-maxlength=12 maxlength=12/></span>
+      <span ng-show="loginForm.userName.$dirty && loginForm.userName.$invalid" class="error">
+        <span ng-show="loginForm.userName.$error.required">Please enter username.</span>
+        <span ng-show="loginForm.userName.$error.minlength">Please enter username minimum of 8 chars.</span>
+        <span ng-show="loginForm.userName.$error.maxlength">Please enter username maximum of 12 chars.</span>
+      </span>      
+    </li>
+    <li>
+      <label for="password" class="content-label">Password</label>
+      <span class="content"><input type="password" id="password" name="password" ng-model="password" required/></span>
+      <span ng-show="loginForm.password.$dirty && loginForm.password.$invalid" class="error">
+        <span ng-show="loginForm.password.$error.required">Please enter password.</span>
+      </span>      
+    </li>   
+    <li>
+      <button type="submit" ng-disabled="loginForm.$invalid">Login</button>
+    </li>
+  </ul>
+</form>
